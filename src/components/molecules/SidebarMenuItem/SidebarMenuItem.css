@@ -1,0 +1,71 @@
+:root {
+  --color-cloud-40: #b2b0b5;
+  --color-cloud-30: #a5a3a8;
+  --color-primary: #6366f1;
+  --color-tertiary-100: #f7f0ff;
+  --color-background-hover: rgba(99, 102, 241, 0.08);
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  min-height: 24px;
+}
+
+.sidebar-menu-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-menu-item-label {
+  font-family: 'Lexend Deca', -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-cloud-40);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover state */
+.sidebar-menu-item:hover .sidebar-menu-item-label {
+  color: var(--color-primary);
+}
+
+.sidebar-menu-item:hover {
+  background-color: var(--color-background-hover);
+  border-radius: 8px;
+}
+
+/* Selected state */
+.sidebar-menu-item.selected .sidebar-menu-item-label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.sidebar-menu-item.selected {
+  background-color: var(--color-background-hover);
+  border-radius: 8px;
+}
+
+.sidebar-menu-item:focus {
+  outline: none;
+}
+
+.sidebar-menu-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}

@@ -1,0 +1,222 @@
+.teacher-login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #141414, #141414);
+    background-color: #141414;
+    padding: 58px 20px 20px;
+    position: relative;
+}
+
+.teacher-login-page__container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.teacher-login-page__content {
+    background: transparent;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.teacher-login-page__back {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: #a5a3a8;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.teacher-login-page__back:hover {
+    color: #ffffff;
+}
+
+.teacher-login-page__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
+}
+
+.teacher-login-page__title {
+    font-family: "Brevia", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #f7f0ff;
+    margin: 0;
+    text-align: center;
+}
+
+.teacher-login-page__tabs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.teacher-login-page__tab {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 16px;
+    border: 1px solid #d3d2d5;
+    background: rgba(203, 213, 224, 0.4);
+    color: #a5a3a8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.teacher-login-page__tab svg {
+    width: 20px;
+    height: 20px;
+}
+
+.teacher-login-page__tab--active {
+    background: #48bb78;
+    border-color: #59f49a;
+    color: #ffffff;
+}
+
+.teacher-login-page__tab--inactive {
+    background: rgba(203, 213, 224, 0.4);
+    border-color: #d3d2d5;
+    color: #a5a3a8;
+}
+
+.teacher-login-page__divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.teacher-login-page__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 414px;
+}
+
+.teacher-login-page__field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.teacher-login-page__label {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 20px;
+    color: #f7f7f8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 4px;
+}
+
+.teacher-login-page__label svg {
+    width: 24px;
+    height: 24px;
+    fill: #f7f7f8;
+}
+
+.teacher-login-page__input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(72, 187, 120, 0.5);
+    background: rgba(72, 187, 120, 0.1);
+    color: #59f49a;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    transition: all 0.2s ease;
+}
+
+.teacher-login-page__input:focus {
+    outline: none;
+    border-color: #48bb78;
+    background: rgba(72, 187, 120, 0.2);
+}
+
+.teacher-login-page__forgot {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 16px;
+    color: #ededee;
+    text-decoration: underline;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+    margin-top: -32px;
+}
+
+.teacher-login-page__forgot:hover {
+    color: #ffffff;
+}
+
+.teacher-login-page__submit {
+    height: 64px;
+    font-size: 20px;
+    margin-top: 24px;
+}
+
+.teacher-login-page__error {
+    padding: 12px 16px;
+    background-color: rgba(254, 226, 226, 0.1);
+    border: 1px solid rgba(153, 27, 27, 0.3);
+    color: #fca5a5;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.teacher-login-page__register {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 16px;
+    color: #ededee;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin-top: 64px;
+}
+
+.teacher-login-page__register:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .teacher-login-page {
+        padding: 40px 16px 16px;
+    }
+
+    .teacher-login-page__container {
+        margin-top: 40px;
+    }
+
+    .teacher-login-page__content {
+        padding: 32px 24px;
+    }
+
+    .teacher-login-page__title {
+        font-size: 28px;
+    }
+}

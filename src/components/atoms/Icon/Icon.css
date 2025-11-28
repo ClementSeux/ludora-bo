@@ -1,0 +1,14 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,40 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
+import LoginPage from './pages/LoginPage/LoginPage';
+import TeacherLoginPage from './pages/TeacherLoginPage/TeacherLoginPage';
+import HomePage from './pages/HomePage/HomePage';
+import ActivitiesPage from './pages/ActivitiesPage/ActivitiesPage';
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/login/teacher" element={<TeacherLoginPage />} />
+          <Route 
+            path="/home" 
+            element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path="/activities" 
+            element={
+              <PrivateRoute>
+                <ActivitiesPage />
+              </PrivateRoute>
+            } 
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
+  );
+}
+
+export default App;

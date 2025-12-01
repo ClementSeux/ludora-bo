@@ -24,7 +24,7 @@ api.interceptors.request.use(
 
 export const authService = {
     login: async (email, password) => {
-        console.log("Attempting login with api:", api.baseURL);
+        console.log("Attempting login with api:", api.defaults.baseURL);
         const response = await api.post("/auth/login", { email, password });
         return response.data;
     },

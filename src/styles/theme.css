@@ -1,43 +1,204 @@
 :root {
-    /* Brand */
-    --color-primary: #7442c8;
-    --color-primary-hover: #8b5dd6;
-    --color-primary-contrast: #ffffff;
-
-    /* Semantic */
-    --color-success: #48bb78;
-    --color-success-contrast: #59f49a;
-    --color-success-soft: rgba(72, 187, 120, 0.15);
-    --color-success-soft-strong: rgba(72, 187, 120, 0.3);
-
-    --color-info: #3b82f6;
-    --color-info-soft: rgba(59, 130, 246, 0.15);
-
-    --color-warning: #fb923c;
-    --color-warning-soft: rgba(251, 146, 60, 0.15);
-
-    /* Surfaces */
-    --color-bg: #141414;
-    --color-surface: #1a1a1a;
+    /* ============================================
+       BRAND COLORS
+       ============================================ */
+    
+    /* Brand Core */
+    --color-brand-main: #944f5f;
+    --color-brand-accent: #2e2c74;
+    --color-brand-alternate: #ff8844;
+    
+    /* Brand Primary (based on Accent) */
+    --color-brand-primary-10: rgba(46, 44, 116, 0.1);
+    --color-brand-primary-30: rgba(46, 44, 116, 0.3);
+    --color-brand-primary-60: rgba(46, 44, 116, 0.6);
+    --color-brand-primary-80: rgba(46, 44, 116, 0.8);
+    --color-brand-primary-100: #2e2c74;
+    
+    /* Brand Secondary */
+    --color-brand-secondary-10: rgba(14, 9, 18, 0.1);
+    --color-brand-secondary-30: rgba(14, 9, 18, 0.3);
+    --color-brand-secondary-60: rgba(14, 9, 18, 0.6);
+    --color-brand-secondary-80: rgba(14, 9, 18, 0.8);
+    --color-brand-secondary-90: #f7f7f8;
+    --color-brand-secondary-100: #0e0912;
+    
+    /* Brand Tertiary */
+    --color-brand-tertiary-10: rgba(251, 251, 254, 0.1);
+    --color-brand-tertiary-30: rgba(251, 251, 254, 0.3);
+    --color-brand-tertiary-60: rgba(251, 251, 254, 0.6);
+    --color-brand-tertiary-80: rgba(251, 251, 254, 0.8);
+    --color-brand-tertiary-100: #fbfbfe;
+    
+    /* Brand Cloud (neutral grays) */
+    --color-brand-cloud-10: #8c8990;
+    --color-brand-cloud-20: #99969c;
+    --color-brand-cloud-30: #a5a3a8;
+    --color-brand-cloud-40: #b2b0b5;
+    --color-brand-cloud-50: #bfbcc2;
+    --color-brand-cloud-60: #d3d2d5;
+    --color-brand-cloud-70: #e0dfe1;
+    --color-brand-cloud-80: #ededee;
+    --color-brand-cloud-90: #f7f7f8;
+    --color-brand-cloud-100: #ffffff;
+    
+    /* ============================================
+       UTILITY COLORS
+       ============================================ */
+    --color-utility-decrease: #e53e3e;
+    --color-utility-increase: #48bb78;
+    --color-utility-warning: #ecb22e;
+    --color-utility-information: #3333ff;
+    --color-utility-changement: #9747ff;
+    --color-utility-caution: #ffa347;
+    --color-utility-stuck: #a5a3a8;
+    
+    /* ============================================
+       SEMANTIC BACKGROUND COLORS - DARK MODE
+       ============================================ */
+    --color-bg-dark-dark: #0e0912;
+    --color-bg-dark-base: #201a25;
+    --color-bg-dark-light: #2a272d;
+    --color-bg-dark-surface: #ffffff;
+    --color-bg-dark-behind: #ffffff;
+    
+    /* ============================================
+       SEMANTIC BACKGROUND COLORS - LIGHT MODE
+       ============================================ */
+    --color-bg-light-dark: #dedede;
+    --color-bg-light-base: #ebeaec;
+    --color-bg-light-light: #f7f7f8;
+    --color-bg-light-surface: #ffffff;
+    --color-bg-light-behind: #ffffff;
+    
+    /* Default background (using dark mode) */
+    --color-bg: var(--color-bg-dark-base);
+    --color-surface: var(--color-bg-dark-light);
     --color-surface-soft: rgba(255, 255, 255, 0.03);
     --color-surface-soft-2: rgba(255, 255, 255, 0.05);
-
-    /* Borders */
+    
+    /* ============================================
+       SEMANTIC TEXT COLORS - ON DARK
+       ============================================ */
+    --color-text-on-dark-10: rgba(251, 251, 254, 0.1);
+    --color-text-on-dark-30: rgba(251, 251, 254, 0.3);
+    --color-text-on-dark-60: rgba(251, 251, 254, 0.6);
+    --color-text-on-dark-80: rgba(251, 251, 254, 0.8);
+    --color-text-on-dark-100: #fbfbfe;
+    --color-text-on-dark-shade: #faf9fa;
+    --color-text-on-dark-muted: #edebef;
+    
+    /* ============================================
+       SEMANTIC TEXT COLORS - ON LIGHT
+       ============================================ */
+    --color-text-on-light-10: rgba(14, 9, 18, 0.1);
+    --color-text-on-light-30: rgba(14, 9, 18, 0.3);
+    --color-text-on-light-60: rgba(14, 9, 18, 0.6);
+    --color-text-on-light-80: rgba(14, 9, 18, 0.8);
+    --color-text-on-light-100: #0e0912;
+    --color-text-on-light-shade: #0d0b0e;
+    --color-text-on-light-muted: #4a4554;
+    
+    /* Default text colors (using on dark) */
+    --color-text-strong: var(--color-text-on-dark-100);
+    --color-text: var(--color-text-on-dark-80);
+    --color-text-muted: var(--color-text-on-dark-60);
+    
+    /* ============================================
+       INTERACTION COLORS - DARK MODE
+       ============================================ */
+    
+    /* Branded Interactions */
+    --color-interaction-branded-bg-idle: rgba(46, 44, 116, 0.8);
+    --color-interaction-branded-bg-hover: #2e2c74;
+    --color-interaction-branded-bg-selected: #2e2c74;
+    --color-interaction-branded-bg-loading: #ffffff;
+    --color-interaction-branded-stroke-idle: rgba(46, 44, 116, 0.3);
+    --color-interaction-branded-stroke-hover: rgba(46, 44, 116, 0.3);
+    --color-interaction-branded-stroke-selected: rgba(46, 44, 116, 0.3);
+    --color-interaction-branded-stroke-loading: rgba(46, 44, 116, 0.3);
+    
+    /* Neutral Interactions */
+    --color-interaction-neutral-bg-idle: var(--color-bg-dark-light);
+    --color-interaction-neutral-bg-hover: var(--color-bg-dark-base);
+    --color-interaction-neutral-bg-selected: var(--color-bg-dark-base);
+    --color-interaction-neutral-bg-loading: var(--color-bg-dark-base);
+    --color-interaction-neutral-stroke-idle: rgba(46, 44, 116, 0.3);
+    --color-interaction-neutral-stroke-hover: rgba(46, 44, 116, 0.3);
+    --color-interaction-neutral-stroke-selected: rgba(46, 44, 116, 0.6);
+    --color-interaction-neutral-stroke-loading: rgba(46, 44, 116, 0.6);
+    
+    /* ============================================
+       INTERACTION COLORS - LIGHT MODE
+       ============================================ */
+    
+    /* Branded Interactions */
+    --color-interaction-light-branded-bg-idle: rgba(46, 44, 116, 0.8);
+    --color-interaction-light-branded-bg-hover: #2e2c74;
+    --color-interaction-light-branded-bg-selected: #2e2c74;
+    --color-interaction-light-branded-bg-loading: #ffffff;
+    --color-interaction-light-branded-stroke-idle: rgba(46, 44, 116, 0.3);
+    --color-interaction-light-branded-stroke-hover: rgba(46, 44, 116, 0.3);
+    --color-interaction-light-branded-stroke-selected: rgba(46, 44, 116, 0.3);
+    --color-interaction-light-branded-stroke-loading: rgba(46, 44, 116, 0.3);
+    
+    /* Neutral Interactions */
+    --color-interaction-light-neutral-bg-idle: var(--color-bg-light-light);
+    --color-interaction-light-neutral-bg-hover: var(--color-bg-light-base);
+    --color-interaction-light-neutral-bg-selected: var(--color-bg-light-base);
+    --color-interaction-light-neutral-bg-loading: var(--color-bg-light-base);
+    --color-interaction-light-neutral-stroke-idle: rgba(251, 251, 254, 0.6);
+    --color-interaction-light-neutral-stroke-hover: rgba(251, 251, 254, 0.6);
+    --color-interaction-light-neutral-stroke-selected: rgba(251, 251, 254, 0.8);
+    --color-interaction-light-neutral-stroke-loading: rgba(251, 251, 254, 0.6);
+    
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    --font-main: "Brevia", sans-serif;
+    --font-complementary: "Lexend Deca", sans-serif;
+    --font-monospace: "Jetbrains Mono", monospace;
+    
+    /* ============================================
+       TEXT SIZES - DEFAULT (320px BREAKPOINT)
+       ============================================ */
+    --text-size-0-5: 4px;
+    --text-size-1: 6px;
+    --text-size-2: 8px;
+    --text-size-3: 12px;
+    --text-size-4: 16px;
+    --text-size-4-5: 18px;
+    --text-size-5: 20px;
+    --text-size-5-5: 22px;
+    --text-size-6: 24px;
+    --text-size-7: 26px;
+    --text-size-7-5: 30px;
+    --text-size-8: 32px;
+    --text-size-9: 40px;
+    --text-size-10: 48px;
+    --text-size-11: 56px;
+    --text-size-12: 64px;
+    
+    /* ============================================
+       BORDERS
+       ============================================ */
     --color-border: rgba(255, 255, 255, 0.1);
     --color-border-soft: rgba(255, 255, 255, 0.08);
-    --color-border-strong: rgba(116, 66, 200, 0.4);
-
-    /* Text */
-    --color-text-strong: #f7f0ff;
-    --color-text: #ededee;
-    --color-text-muted: #a5a3a8;
-
-    /* Radii */
-    --radius-sm: 6px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-
-    /* Spacing */
+    --color-border-strong: rgba(46, 44, 116, 0.4);
+    
+    /* ============================================
+       RADII
+       ============================================ */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-pill: 99px;
+    --radius-rectangular: 4px;
+    
+    /* ============================================
+       SPACING
+       ============================================ */
+    --space-0-5: 4px;
     --space-1: 4px;
     --space-2: 8px;
     --space-3: 12px;
@@ -47,10 +208,105 @@
     --space-8: 32px;
     --space-10: 40px;
     --space-12: 48px;
-
-    /* Shadows (kept subtle for dark) */
+    
+    /* ============================================
+       SHADOWS
+       ============================================ */
     --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-inner-idle: rgba(113, 113, 113, 0.2);
+    --shadow-inner-hover: rgba(113, 113, 113, 0.2);
+    
+    /* ============================================
+       COMPONENT-SPECIFIC COLORS
+       ============================================ */
+    --color-card-drop-item: #c7c7c7;
+    --color-card-activity-title: #ffffff;
+    
+    /* Badge Colors */
+    --color-badge-on-track: #48bb78;
+    --color-badge-on-track-bg: rgba(72, 187, 120, 0.3);
+    --color-badge-on-track-stroke: rgba(181, 227, 200, 0.3);
+    
+    --color-badge-risk: #e53e3e;
+    --color-badge-risk-bg: rgba(229, 62, 62, 0.3);
+    --color-badge-risk-stroke: rgba(229, 62, 62, 0.3);
+    
+    --color-badge-improving: #9747ff;
+    --color-badge-improving-bg: rgba(151, 71, 255, 0.3);
+    --color-badge-improving-stroke: rgba(151, 71, 255, 0.3);
+    
+    --color-badge-support: #ffa347;
+    --color-badge-support-bg: rgba(255, 136, 68, 0.3);
+    --color-badge-support-stroke: rgba(255, 136, 68, 0.3);
+    
+    --color-badge-pending: #a5a3a8;
+    --color-badge-pending-bg: rgba(165, 163, 168, 0.3);
+    --color-badge-pending-stroke: rgba(165, 163, 168, 0.3);
+    
+    /* Legacy compatibility (keeping existing variables) */
+    --color-primary: var(--color-brand-primary-100);
+    --color-primary-hover: var(--color-interaction-branded-bg-hover);
+    --color-primary-contrast: #ffffff;
+    
+    --color-success: var(--color-utility-increase);
+    --color-success-contrast: #59f49a;
+    --color-success-soft: rgba(72, 187, 120, 0.15);
+    --color-success-soft-strong: rgba(72, 187, 120, 0.3);
+    
+    --color-info: var(--color-utility-information);
+    --color-info-soft: rgba(59, 130, 246, 0.15);
+    
+    --color-warning: var(--color-utility-warning);
+    --color-warning-soft: rgba(251, 146, 60, 0.15);
+}
+
+/* ============================================
+   TEXT SIZES - 768px BREAKPOINT
+   ============================================ */
+@media (min-width: 768px) {
+    :root {
+        --text-size-0-5: 4px;
+        --text-size-1: 8px;
+        --text-size-2: 12px;
+        --text-size-3: 16px;
+        --text-size-4: 20px;
+        --text-size-4-5: 22px;
+        --text-size-5: 24px;
+        --text-size-5-5: 28px;
+        --text-size-6: 32px;
+        --text-size-7: 40px;
+        --text-size-7-5: 44px;
+        --text-size-8: 48px;
+        --text-size-9: 56px;
+        --text-size-10: 64px;
+        --text-size-11: 72px;
+        --text-size-12: 80px;
+    }
+}
+
+/* ============================================
+   TEXT SIZES - 1920px BREAKPOINT
+   ============================================ */
+@media (min-width: 1920px) {
+    :root {
+        --text-size-0-5: 4px;
+        --text-size-1: 8px;
+        --text-size-2: 12px;
+        --text-size-3: 16px;
+        --text-size-4: 20px;
+        --text-size-4-5: 24px;
+        --text-size-5: 32px;
+        --text-size-5-5: 36px;
+        --text-size-6: 40px;
+        --text-size-7: 48px;
+        --text-size-7-5: 56px;
+        --text-size-8: 64px;
+        --text-size-9: 72px;
+        --text-size-10: 80px;
+        --text-size-11: 88px;
+        --text-size-12: 96px;
+    }
 }
 
 html,
@@ -58,4 +314,5 @@ body,
 #root {
     background-color: var(--color-bg);
     color: var(--color-text);
+    font-family: var(--font-main);
 }

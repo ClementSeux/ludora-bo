@@ -136,15 +136,6 @@ const ActivityDetailPage = () => {
     return 'danger';
   };
 
-  const getStatusVariant = (status) => {
-    const statusMap = {
-      'Terminé': 'success',
-      'En cours': 'warning',
-      'Non commencé': 'info',
-    };
-    return statusMap[status] || 'default';
-  };
-
   if (loading) {
     return (
       <DashboardLayout user={user} onLogout={handleLogout} navItems={navItems} selectedNavItem="activities">

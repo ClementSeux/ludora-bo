@@ -36,9 +36,9 @@ const ActivityCard = ({ status, duration }) => {
 
 const ActivitySection = ({
   title = 'Ca se passe ici !',
-  subtitle = 'Qu-est-ce qu\'on apprendre ?',
+  subtitle = "Qu-est-ce qu'on apprendre ?",
   description =
-    "Suivez en un coup d\'oeil les apprentissages en cours dans l\'application.\nLes enfants explorent differents univers a travers des mini-jeux educatifs.",
+    "Suivez en un coup d'oeil les apprentissages en cours dans l'application.\nLes enfants explorent differents univers a travers des mini-jeux educatifs.",
   ctaLabel = 'Placeholder',
   onCtaClick,
   activities = defaultActivities,

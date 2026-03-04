@@ -104,10 +104,6 @@ function OverviewTab() {
   ];
   const PIE_COLORS = [CHART_COLORS.primary, CHART_COLORS.secondary];
 
-  const growthData = pilotage.cumulAbonnements.year1.map((v, i) => ({ name: MONTHS_Y1[i], y1: v }))
-    .concat(pilotage.cumulAbonnements.year2.map((v, i) => ({ name: MONTHS_Y2[i], y2: v })))
-    .concat(pilotage.cumulAbonnements.year3.map((v, i) => ({ name: MONTHS_Y3[i], y3: v })));
-
   const cumulAllYears = [
     ...pilotage.cumulAbonnements.year1.map((v, i) => ({ name: MONTHS_Y1[i], value: v })),
     ...pilotage.cumulAbonnements.year2.map((v, i) => ({ name: MONTHS_Y2[i], value: v })),
@@ -312,7 +308,7 @@ function ResultatTab() {
           <h3>Structure des charges</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={structureData} cx="50%" cy="50%" innerRadius={50} outerRadius={90} paddingAngle={3} dataKey="value" label={({ name, percent }) => `${(percent * 100).toFixed(0)}%`}>
+              <Pie data={structureData} cx="50%" cy="50%" innerRadius={50} outerRadius={90} paddingAngle={3} dataKey="value" label={({ percent }) => `${(percent * 100).toFixed(0)}%`}>
                 {structureData.map((_, i) => <Cell key={i} fill={STRUCT_COLORS[i]} />)}
               </Pie>
               <Tooltip content={<CustomTooltip />} />

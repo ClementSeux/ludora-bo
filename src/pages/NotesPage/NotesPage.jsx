@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './NotesPage.css';
 
 // Icon components (simplified SVG icons)
@@ -132,9 +132,6 @@ const NotesPage = () => {
       case 'warning':
         return 'notes-table__score--warning';
       case 'caution':
-                  className="notes-page__action-btn notes-page__action-btn--export"
-                  onClick={handleExportNotes}
-                
         return 'notes-table__score--caution';
       default:
         return '';
@@ -166,7 +163,7 @@ const NotesPage = () => {
             <div className="notes-page__title-row">
               <h1 className="notes-page__title">Aperçu Notes</h1>
               <div className="notes-page__actions">
-                <button className="notes-page__action-btn notes-page__action-btn--export">
+                <button className="notes-page__action-btn notes-page__action-btn--export" onClick={handleExportNotes}>
                   <span className="notes-page__action-icon">
                     <ExportIcon />
                   </span>

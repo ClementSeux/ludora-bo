@@ -2,7 +2,6 @@ import './SegmentedActions.css';
 import CallToAction from '../../atoms/CallToAction';
 
 const SegmentedActions = ({ 
-  actions = [],
   slot1 = true, 
   slot2 = true, 
   slot3 = true, 

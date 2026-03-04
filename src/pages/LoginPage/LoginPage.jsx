@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { School, User } from 'lucide-react';
 import LudoraLogo from '../../components/atoms/LudoraLogo/LudoraLogo';
@@ -7,10 +6,8 @@ import './LoginPage.css';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [selectedRole, setSelectedRole] = useState(null);
 
   const handleRoleSelect = (role) => {
-    setSelectedRole(role);
     // Navigate to the appropriate login form based on role
     if (role === 'teacher') {
       navigate('/login/teacher');

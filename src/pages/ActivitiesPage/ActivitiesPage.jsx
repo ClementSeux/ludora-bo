@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/atoms/Button/Button';
 import DashboardLayout from '../../components/organisms/DashboardLayout/DashboardLayout';
@@ -8,15 +7,9 @@ import './ActivitiesPage.css';
 
 const ActivitiesPage = () => {
   const { user, logout } = useAuth();
-  const navigate = useNavigate();
   const [activities, setActivities] = useState([]);
   const [themes, setThemes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedTheme, setSelectedTheme] = useState(null);
-  const [stats, setStats] = useState({
-    activities: 0,
-    themes: 0
-  });
 
   useEffect(() => {
     fetchData();
@@ -45,46 +38,17 @@ const ActivitiesPage = () => {
 
       setActivities(activitiesData);
       setThemes(themesData);
-      setStats({
-        activities: activitiesData.length,
-        themes: themesData.length
-      });
     } catch (error) {
       console.error('Error fetching data:', error);
       // Set empty arrays on error
       setActivities([]);
       setThemes([]);
-      setStats({
-        activities: 0,
-        themes: 0
-      });
     } finally {
       setLoading(false);
     }
   };
 
-  const handleThemeClick = (themeId) => {
-    setSelectedTheme(themeId === selectedTheme ? null : themeId);
-  };
-
-  const filteredActivities = selectedTheme
-    ? activities.filter(activity => activity.themeId === selectedTheme)
-    : activities;
-
-  const activitiesMenuItems = [
-    { 
-      id: 1, 
-      label: 'Toutes les activités', 
-      count: stats.activities, 
-      isSelected: !selectedTheme 
-    },
-    { 
-      id: 2, 
-      label: 'Thèmes', 
-      count: stats.themes, 
-      isSelected: false 
-    },
-  ];
+  const filteredActivities = activities;
 
   if (loading) {
     return (
@@ -102,10 +66,7 @@ const ActivitiesPage = () => {
           <div className="activities-toolbar">
             <div className="activities-toolbar-left">
               <h2 className="activities-section-title">
-                {selectedTheme 
-                  ? `Activités - ${themes.find(t => t.id === selectedTheme)?.name}`
-                  : 'Toutes les activités'
-                }
+                Toutes les activités
               </h2>
               <p className="activities-section-subtitle">
                 {filteredActivities.length} activité(s) disponible(s)

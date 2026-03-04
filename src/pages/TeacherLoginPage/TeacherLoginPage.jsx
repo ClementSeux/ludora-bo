@@ -31,10 +31,6 @@ const TeacherLoginPage = () => {
     setIsLoading(false);
   };
 
-  const handleBack = () => {
-    navigate('/');
-  };
-
   return (
     <div className="teacher-login-page">
       <LudoraLogo />

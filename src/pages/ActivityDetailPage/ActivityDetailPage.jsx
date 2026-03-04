@@ -122,7 +122,13 @@ const ActivityDetailPage = () => {
     navigate('/');
   };
 
-  // navItems removed — SideNav uses DEFAULT_NAV_GROUPS
+  const navItems = [
+    { id: 'home', label: 'Accueil', icon: 'home', onClick: () => navigate('/home/overview') },
+    { id: 'students', label: "Tableau d'Éleves", icon: 'users', onClick: () => navigate('/notes') },
+    { id: 'activities', label: 'Activités', icon: 'listTodo', selected: true, onClick: () => navigate('/activities') },
+    { id: 'messages', label: 'Mes messages', icon: 'messagesSquare', count: 0, countVariant: 'alert', onClick: () => navigate('/messages') },
+    { id: 'admin', label: 'Administration', icon: 'settings', onClick: () => navigate('/administration') },
+  ];
 
   const getScoreColor = (score) => {
     if (score >= 16) return 'success';
@@ -141,7 +147,7 @@ const ActivityDetailPage = () => {
 
   if (loading) {
     return (
-      <DashboardLayout user={user} onLogout={handleLogout}>
+      <DashboardLayout user={user} onLogout={handleLogout} navItems={navItems} selectedNavItem="activities">
         <div className="activity-detail-loading">
           <p>Chargement de l'activité...</p>
         </div>
@@ -151,7 +157,7 @@ const ActivityDetailPage = () => {
 
   if (!activity) {
     return (
-      <DashboardLayout user={user} onLogout={handleLogout}>
+      <DashboardLayout user={user} onLogout={handleLogout} navItems={navItems} selectedNavItem="activities">
         <div className="activity-detail-error">
           <p>Activité non trouvée</p>
           <Button variant="primary" onClick={() => navigate('/activities')}>
@@ -167,7 +173,7 @@ const ActivityDetailPage = () => {
     : 0;
 
   return (
-    <DashboardLayout user={user} onLogout={handleLogout}>
+    <DashboardLayout user={user} onLogout={handleLogout} navItems={navItems} selectedNavItem="activities">
       <div className="activity-detail-page">
         {/* Breadcrumb */}
         <div className="activity-detail-breadcrumb">

@@ -1,0 +1,21 @@
+/* SegmentedActions Container */
+.segmented-actions {
+    background-color: var(--color-text-on-dark-10);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 494px;
+    min-width: 376px;
+    width: 494px;
+    padding: 16px 32px 8px 32px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Individual Action Item */
+.segmented-actions-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test preview http://localhost:4173 cy:run"
+    "test:e2e": "start-server-and-test preview http://localhost:4173 cy:run",
+    "test:e2e:ci": "npm run build && start-server-and-test preview http://localhost:4173 cy:run"
   },
   "dependencies": {
     "axios": "^1.13.2",
